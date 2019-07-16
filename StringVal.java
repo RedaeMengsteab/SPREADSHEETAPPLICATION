@@ -1,4 +1,4 @@
-package ClassDomain3_3;
+package classDomain3cleancode;
 
 public class StringVal extends Content{
 
@@ -20,6 +20,12 @@ public class StringVal extends Content{
 
 	@Override
 	public String getcontent() {
+		// TODO Auto-generated method stub
+		return stringvalue;
+	}
+
+	@Override
+	public String getStringVal() {
 		// TODO Auto-generated method stub
 		return stringvalue;
 	}

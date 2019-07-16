@@ -1,10 +1,10 @@
 package classDomain3cleancode;
 
-public class Divide implements BinaryOperator {
+public class OpenP implements BinaryOperator {
 
-private char getCharacter;
+	private char getCharacter;
 	
-	public Divide(char tokens) {
+	public OpenP(char tokens) {
 		this.getCharacter = tokens;
 		
 	}
@@ -16,7 +16,7 @@ private char getCharacter;
 	}
 	@Override
 	public String evaluate(Content left,Content right) {
-		return String.valueOf(Float.parseFloat(left.getcontent()) / Float.parseFloat(right.getcontent()));
+		return null;
 	}
 
 }

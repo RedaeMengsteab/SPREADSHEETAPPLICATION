@@ -1,12 +1,15 @@
-package ClassDomain3_3;
+package classDomain3cleancode;
 
 public class Numeric extends Content{
 
 	private Float numValue;
+	private String stringVal;
+	
 	
 	public Numeric(Float numValue) {
 		super();
 		this.numValue = numValue;
+		this.stringVal=String.valueOf(numValue);
 	}
 
 	public Float getNumValue() {
@@ -21,6 +24,11 @@ public class Numeric extends Content{
 	public String getcontent() {
 		
 		return String.valueOf(numValue);
+	}
+	@Override
+	public String getStringVal() {
+		
+		return this.stringVal;
 	}
 
 }

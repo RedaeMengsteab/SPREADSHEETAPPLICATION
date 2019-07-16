@@ -1,6 +1,5 @@
-package ClassDomain3_3;
+package classDomain3cleancode;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -19,57 +18,42 @@ public class Sheet {
 	}
 
 
-	public void addCell(Cell cell) {
+	public void addCell(String value,int row,int col) {
+		Cell cell=CellFactory.CreateCell(this,value,row,col);
 		if(cell.getXpos()>this.row)
-			row=cell.getXpos()+1;
+			this.row=cell.getXpos()+1;
 		if(cell.getYpos()>this.column)
-			row=cell.getYpos()+1;
+			this.column=cell.getYpos()+1;
 		cells.put(new Position(cell.getXpos(), cell.getYpos()),cell);
 		cell.setSheet(this);
-		cell.assign();
+	//	cell.assign();
 	}
 	public void clearCell() {
 		//
 	}
 	public void displaySheet() {
-		int strSize=0;
-		int limit=6;
+		System.out.println(String.format("%s","----------------------------------------------------------------------------------------------------------------------------------------------------------------"));
 		for(int i=0;i<=row;i++) {
 			for(int j=0;j<=column;j++) {
 				if(cells.get(new Position(i,j))!=null) {
-					strSize=cells.get(new Position(i,j)).getContent().getcontent().length();
-								System.out.print(String.format("%20s", cells.get(new Position(i,j)).getContent().getcontent(), "|"));
+				System.out.print(String.format("%-28s %-10s",cells.get(new Position(i,j)).getContent().getcontent(),"|" ));
 				}else
 				System.out.print("\t");
 				}
 			System.out.println();
 					
 			}
-		
+		System.out.print(String.format("%s","----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"));
+	
 	}
 	public void displayAll() {
 		System.out.println();
 		System.out.println();
 		for(Position po:cells.keySet()) {
-			System.out.println("[" +po.getRow() +","+po.getColumn()+"]="+cells.get(po).getContent().getcontent());
+			System.out.println("[" +po.getRow() +","+po.getColumn()+"]="+cells.get(po).getContent().getcontent()+"--->"+cells.get(po).getContent().getStringVal());
 		}
 		
 	}
-
-
-	public void saveSheet() {
-		//
-	}
-	public void loadSheet() {
-		//
-	}
-	public void addRow() {
-		//
-	}
-	public void addColumn() {
-		//
-	}
-
 
 	public String getFileName() {
 		return fileName;
@@ -79,10 +63,6 @@ public class Sheet {
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-
-
-	
-
 
 	public int getRow() {
 		return row;

@@ -1,4 +1,4 @@
-package ClassDomain3_3;
+package classDomain3cleancode;
 
 public class Cell {
 	private int xpos;
@@ -9,6 +9,11 @@ public class Cell {
 		this.xpos = xpos;
 		this.ypos = ypos;
 		content=ContentFactory.CreateContent(value);
+	}
+
+	public Cell(int xpos, int ypos) {
+		this.xpos = xpos;
+		this.ypos = ypos;
 	}
 
 	public int getXpos() {
@@ -49,9 +54,9 @@ public class Cell {
 		this.sheet = sheet;
 	}
 	
-	public void assign() {
-		content.setCell(this);
-		content.compute();
-	}
+//	public void assign() {
+//		content.setCell(this);
+//		content.compute();
+//	}
 
 }

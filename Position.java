@@ -1,4 +1,4 @@
-package ClassDomain3_3;
+package classDomain3cleancode;
 
 public class Position {
 

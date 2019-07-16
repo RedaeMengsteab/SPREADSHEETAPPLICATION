@@ -1,4 +1,4 @@
-package ClassDomain3_3;
+package classDomain3cleancode;
 
 public class Reference extends Content{
 
@@ -41,7 +41,7 @@ public class Reference extends Content{
 		int indexOfClose=stringVal.indexOf(']');
 		xpos=Integer.parseInt(stringVal.substring(1, indexOFComa));
 		ypos=Integer.parseInt(stringVal.substring(indexOFComa+1, indexOfClose));
-	
+	    
 		Position pos=new Position(xpos,ypos);
 		Cell cell=this.getCell().getSheet().getCells().get(pos);
 		return cell;

@@ -1,4 +1,4 @@
-package ClassDomain3_3;;
+package classDomain3cleancode;
 
 public abstract class Content {
 	private Cell cell;
@@ -12,9 +12,10 @@ public Cell getCell() {
 	}
 
 public abstract String getcontent();
+public abstract String getStringVal();
 
 public void compute() {
-	// TODO Auto-generated method stub
+	// Useful on reference and Expression sub classes
 	
 }
 }
